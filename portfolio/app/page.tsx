@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const home = () => {
   return (
@@ -10,8 +11,7 @@ const home = () => {
       L'administration système et réseau m'initie au domaine de la cybersécurité, mon but pendant et après mes etudes est et sera d'apprendre tout les jours, les système, les types de sécurisation et surtout les sauvegardes. Ce grand domaine de la cybersécurité m'inspire fortement à aller de l'avent tout les jours et à trouver une sécurité optimal pour nos preserver des dangers permanents et inovents.</p>
       <h3>Mon domaine de competance</h3>
       <ul>
-        <li>html css</li>
-        <li>javascript</li>
+        <li>HTML-CSS-JS</li>
         <li>python</li>
         <li>Next-JS</li>
         <li>linux</li>
@@ -21,6 +21,7 @@ const home = () => {
         <li>flipper zero</li>
         <li>chameleon ultra</li>
         <li>hack rf one</li>
+        <li>kali-linux</li>
         <li>Hardware</li>
         <li>impression 3D</li>
         <li>creation de site web</li>

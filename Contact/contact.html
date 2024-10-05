@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-moi</title>
+    <style>
+        body {
+            background-color: #C0C0C0; /* Fond argenté */
+            color: #4E7E2A; /* Vert vision nocturne */
+            font-family: Arial, sans-serif; /* Police par défaut */
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff; /* Fond blanc pour le formulaire */
+            border: 2px solid #4E7E2A; /* Bordure en vert vision nocturne */
+            border-radius: 8px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9; /* Légèrement gris pour les champs */
+            color: #000000; /* Texte noir dans les champs */
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4E7E2A; /* Vert vision nocturne pour le bouton */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3A5B22; /* Une teinte plus foncée pour le bouton au survol */
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center;">Contactez-moi</h2>
+    <form id="contact-form">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="email">Adresse e-mail :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="sujet">Sujet :</label>
+        <input type="text" id="sujet" name="sujet" required>
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Empêcher l'envoi du formulaire standard
+
+            const formData = {
+                nom: document.getElementById('nom').value,
+                email: document.getElementById('email').value,
+                sujet: document.getElementById('sujet').value,
+                message: document.getElementById('message').value
+            };
+
+            // Envoyer les données au serveur Flask
+            fetch('http://localhost:5000/envoyer-mail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message); // Message de confirmation
+            })
+            .catch(error => {
+                alert("Erreur lors de l'envoi du message. Veuillez réessayer plus tard.");
+                console.error('Erreur:', error);
+            });
+        });
+    </script>
+
+</body>
+</html>

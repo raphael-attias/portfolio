@@ -1,13 +1,125 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raphaël Attias</title>
-    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Mon Cursus et Projets Scolaires</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #1e1e1e; /* Couleur sombre pour le fond */
+            color: #f0f0f0; /* Couleur claire pour le texte */
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #2a2a2a; /* Fond légèrement plus clair pour le conteneur */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #00bfff; /* Bleu cyan pour les titres */
+        }
+        .unit {
+            background: #3c3c3c; /* Fond sombre pour chaque unité */
+            border-left: 5px solid #00ff00; /* Bordure verte pour le style cybersécurité */
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .unit-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #00bfff; /* Couleur du titre de l'unité */
+        }
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            color: #f0f0f0; /* Couleur des éléments de liste */
+        }
+        p {
+            margin-bottom: 15px;
+            color: #f0f0f0; /* Couleur des paragraphes */
+        }
+    </style>
 </head>
-
 <body>
-    <p></p>
+    <div class="container">
+        <!-- Présentation du cursus -->
+        <h1>Mon Cursus</h1>
+        <p>Au cours de ma formation, j'ai eu l'opportunité d'acquérir des compétences variées en développement, administration systèmes et réseaux, ainsi qu'en conception numérique. Durant la première année, j'ai approfondi mes connaissances en développement d'applications web et desktop, ainsi qu'en programmation et algorithmie, avec des projets en HTML, CSS, JavaScript, PHP, et SQL. J'ai également découvert les bases de l'électronique et des objets connectés (IoT).</p>
+        
+        <p>En deuxième année, mon cursus s'est orienté vers l'administration des systèmes et des réseaux, avec des projets tels que la mise en place d'un serveur VPN, la configuration de RAID, et la création d'un pare-feu personnalisé. J'ai également travaillé sur des projets d'analyse forensique, renforçant ma compréhension des aspects de sécurité informatique.</p>
+        
+        <p>Cette formation m'a permis de développer une polyvalence technique, en passant de la programmation à la gestion des systèmes et réseaux, tout en touchant à des domaines créatifs tels que la création de contenu audiovisuel. Grâce à ce parcours, je me sens prêt à relever des défis variés dans le domaine du numérique.</p>
+        
+        <!-- Description des projets -->
+        <h1>Projets Scolaires</h1>
+
+        <h2>Année 1</h2>
+        <div class="unit">
+            <h3 class="unit-title">UNIT 1 : Hardware, Système & Réseaux</h3>
+            <ul>
+                <li>Maquetter une application</li>
+                <li>Développer une interface utilisateur de type desktop</li>
+                <li>Développer des composants d’accès aux données</li>
+                <li>Développer la partie front-end d’une interface utilisateur web (HTML, CSS, JS…)</li>
+                <li>Développer la partie back-end d’une interface utilisateur web (PHP, SQL)</li>
+            </ul>
+        </div>
+
+        <div class="unit">
+            <h3 class="unit-title">UNIT 2 : Programmation & Algorithmie</h3>
+            <ul>
+                <li>Électronique, IoT</li>
+                <li>Installation de systèmes d’exploitation</li>
+                <li>Virtualisation</li>
+                <li>Apprendre à utiliser Linux, Shell, Scripting</li>
+                <li>Apprendre des notions de développement et d’algorithmie</li>
+            </ul>
+        </div>
+
+        <div class="unit">
+            <h3 class="unit-title">UNIT 3 : Ouverture sur les Spécialités du Numérique</h3>
+            <ul>
+                <li>Création de montages vidéos, comprendre les fondamentaux des techniques audionumériques</li>
+                <li>Découverte des métiers du design et du graphisme numérique</li>
+            </ul>
+        </div>
+
+        <h2>Année 2</h2>
+        <div class="unit">
+            <h3 class="unit-title">UNIT 1 : Administration Systèmes</h3>
+            <ul>
+                <li>Mise en place d’un SIEM personnalisé</li>
+                <li>Mise en place d’un pare-feu</li>
+                <li>Création d’un serveur WEB, FTP</li>
+            </ul>
+        </div>
+
+        <div class="unit">
+            <h3 class="unit-title">UNIT 2 : Administration des Données</h3>
+            <ul>
+                <li>Mise en place de différents RAID</li>
+                <li>Apprentissage de SQL</li>
+                <li>Projet d’analyse forensique</li>
+            </ul>
+        </div>
+
+        <div class="unit">
+            <h3 class="unit-title">UNIT 3 : Administration Réseau</h3>
+            <ul>
+                <li>Utilisation de Cisco Packet Tracer</li>
+                <li>Création d’un serveur VPN</li>
+                <li>Réalisation de plan d’adressage</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

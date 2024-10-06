@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raphaël Attias | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -53,28 +53,45 @@
         }
 
         .button-list {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 30px 0;
+            display: grid;
+            gap: 20px; /* Espacement entre les boutons */
+            margin: 30px 20px; /* Espacement horizontal autour de la grille */
         }
 
         .button-item {
-            display: inline-block;
-            padding: 15px 25px;
-            margin: 10px;
+            width: 200px; /* Largeur fixe */
             background-color: #ffffff; /* Fond blanc pour les boutons */
             color: #66ff66; /* Texte des boutons en vert */
             text-decoration: none;
             border: 2px solid #66ff66; /* Contour vert */
             border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Alignement en haut pour le texte */
+            padding: 15px; /* Espacement interne */
+            box-sizing: border-box; /* Inclure le padding dans les dimensions */
+            margin: 0; /* Pas de marge interne, utiliser le padding pour espacement */
+        }
+
+        .button-item img {
+            width: 100px; /* Largeur fixe pour rendre l'image carrée */
+            height: 100px; /* Hauteur fixe pour rendre l'image carrée */
+            object-fit: cover; /* Couvrir sans déformer l'image */
+            border-radius: 5px; /* Coins arrondis */
+        }
+
+        .button-item span {
+            text-align: center;
+            font-size: 1.1em;
+            margin-top: 10px; /* Espacement entre l'image et le texte */
         }
 
         .button-item:hover {
             background-color: #66ff66; /* Fond vert au survol */
             color: #ffffff; /* Texte en blanc au survol */
-            transform: translateY(-2px);
+            transform: translateY(-5px);
         }
 
         footer {
@@ -82,6 +99,30 @@
             margin: 40px 0;
             font-size: 0.9em;
             color: #777;
+        }
+
+        /* Media Queries pour les différentes tailles d'écran */
+        @media (max-width: 425px) {
+            .button-list {
+                grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les écrans de 425px */
+                padding: 0 15px; /* Espacement latéral pour les boutons */
+                margin: 30px 5%; /* Marges horizontales pour espacement par rapport aux bords */
+            }
+            .button-item {
+                height: auto; /* Hauteur automatique pour les petits écrans */
+            }
+        }
+
+        @media (min-width: 426px) and (max-width: 1024px) {
+            .button-list {
+                grid-template-columns: repeat(3, 1fr); /* 3 colonnes pour les écrans entre 426px et 1024px */
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .button-list {
+                grid-template-columns: repeat(3, 1fr); /* 3 colonnes pour les écrans plus larges */
+            }
         }
     </style>
 </head>
@@ -105,22 +146,28 @@
     </div>
 
     <section class="button-list">
-        <a href="projet-perso.html" class="button-item">
+        <a href="perso.html" class="button-item">
+            <img src="../image/cybersup.jpg" alt="Projets Personnels Icon">
             <span>Projets Personnels</span>
         </a>
-        <a href="projet-ecole.html" class="button-item">
+        <a href="ecole.html" class="button-item">
+            <img src="../image/flipperzerobox.jpg" alt="Projets École Icon">
             <span>Projets École</span>
         </a>
-        <a href="https://github.com" target="_blank" class="button-item">
+        <a href="https://github.com/raphael-attias" target="_blank" class="button-item">
+            <img src="../image/gpen.jpg" alt="GitHub Icon">
             <span>Mon GitHub</span>
         </a>
         <a href="sport.html" class="button-item">
+            <img src="../image/impression-3d.jpg" alt="Sport Icon">
             <span>Sport</span>
         </a>
         <a href="competence.html" class="button-item">
+            <img src="../image/openingrpi.jpg" alt="Compétences Icon">
             <span>Compétences</span>
         </a>
         <a href="contact.html" class="button-item">
+            <img src="../image/rfone.jpg" alt="Contact Icon">
             <span>Contact</span>
         </a>
     </section>

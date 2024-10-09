@@ -15,7 +15,7 @@
             <span id="R">R</span>
             <span id="A">A</span>
         </div>
-        <div id="name" class="name">
+        <div id="name" class="name hidden"> <!-- Ajout de la classe hidden pour masquer le nom au départ -->
             <h1>Raphaël ATTIAS</h1>
             <h2>Étudiant en administration de système sécurisé</h2>
         </div>
@@ -29,7 +29,7 @@
 
     <section class="button-list">
         <a href="perso.html" class="button-item">
-            <img src="../image/cybersup.jpg" alt="Projets Personnels Icon">
+            <img src="../image/Design sans titre.png" alt="Projets Personnels Icon">
             <span>Projets Personnels</span>
         </a>
         <a href="ecole.html" class="button-item">
@@ -37,11 +37,11 @@
             <span>Projets École</span>
         </a>
         <a href="https://github.com/raphael-attias" target="_blank" class="button-item">
-            <img src="../image/gpen.jpg" alt="GitHub Icon">
+            <img src="../image/github.png" alt="GitHub Icon">
             <span>Mon GitHub</span>
         </a>
         <a href="sport.html" class="button-item">
-            <img src="../image/impression-3d.jpg" alt="Sport Icon">
+            <img src="../image/gpen.jpg" alt="Sport Icon">
             <span>Sport</span>
         </a>
         <a href="competence.html" class="button-item">
@@ -58,7 +58,34 @@
         <p>&copy; 2024 Raphaël ATTIAS. Tous droits réservés.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        window.onload = function () {
+            const letterR = document.getElementById('R');
+            const letterA = document.getElementById('A');
+            const nameContainer = document.getElementById('name');
+
+            // Lancer l'animation des lettres
+            letterR.classList.add('animate');
+            letterA.classList.add('animate');
+
+            // Attendre la fin de l'animation des lettres
+            setTimeout(() => {
+                // Afficher le nom "Raphaël ATTIAS" après 750ms
+                nameContainer.classList.remove('hidden');
+                nameContainer.classList.add('visible');
+            }, 750); // Correspondre à la durée de l'animation
+        };
+
+        window.onscroll = function () {
+            const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollPosition > 200) {
+                document.body.classList.add('scroll-triggered');
+            } else {
+                document.body.classList.remove('scroll-triggered');
+            }
+        };
+    </script>
 </body>
 
 </html>

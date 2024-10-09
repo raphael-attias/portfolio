@@ -116,3 +116,33 @@ html, body {
         width: calc(100% - 20px);
     }
 }
+
+/* Animation and scroll-triggered styles */
+.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.animate {
+    animation: fadeIn 0.75s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-triggered {
+    background-color: #2a2a2a; /* Exemples d'effets déclenchés par le scroll */
+    transition: background-color 0.3s ease;
+}

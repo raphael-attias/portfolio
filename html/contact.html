@@ -6,38 +6,48 @@
     <title>Contactez-moi</title>
     <style>
         body {
-            background-color: #C0C0C0; /* Fond argenté */
-            color: #4E7E2A; /* Vert vision nocturne */
-            font-family: Arial, sans-serif; /* Police par défaut */
+            background-color: #2a2a2a; /* Fond sombre */
+            color: #66ff66; /* Vert vision nocturne pour le texte */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
         form {
             max-width: 600px;
-            margin: auto;
+            margin: 20px auto;
             padding: 20px;
-            background-color: #ffffff; /* Fond blanc pour le formulaire */
-            border: 2px solid #4E7E2A; /* Bordure en vert vision nocturne */
+            background-color: #2a2a2a; /* Fond sombre pour le formulaire */
+            border: 2px solid #66ff66; /* Bordure verte */
             border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
         }
         input, textarea {
             width: 100%;
             padding: 10px;
-            margin-top: 10px;
+            margin-top: 5px;
             border-radius: 4px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9; /* Légèrement gris pour les champs */
-            color: #000000; /* Texte noir dans les champs */
+            border: 1px solid #66ff66; /* Bordure verte autour des champs */
+            background-color: #2a2a2a; /* Arrière-plan des champs */
+            color: #66ff66; /* Texte vert pour les entrées */
+            box-sizing: border-box;
+        }
+        input::placeholder, textarea::placeholder {
+            color: #66ff66; /* Couleur des placeholders */
         }
         button {
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #4E7E2A; /* Vert vision nocturne pour le bouton */
+            background-color: #66ff66; /* Bouton vert */
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
         button:hover {
-            background-color: #3A5B22; /* Une teinte plus foncée pour le bouton au survol */
+            background-color: #4ccc4c; /* Vert légèrement plus foncé au survol */
         }
     </style>
 </head>
@@ -45,17 +55,17 @@
 
     <h2 style="text-align: center;">Contactez-moi</h2>
     <form id="contact-form">
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
+        <label for="nom">Nom Prénom :</label>
+        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom/Prénom" required>
 
         <label for="email">Adresse e-mail :</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="Entrez votre e-mail" required>
 
-        <label for="sujet">Sujet :</label>
-        <input type="text" id="sujet" name="sujet" required>
+        <label for="sujet">Objet :</label>
+        <input type="text" id="sujet" name="sujet" placeholder="Entrez votre objets" required>
 
         <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+        <textarea id="message" name="message" rows="5" placeholder="Tapez votre message ici..." required></textarea>
 
         <button type="submit">Envoyer</button>
     </form>

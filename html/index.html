@@ -6,144 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raphaël Attias | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #1e1e1e; /* Fond sombre */
-            color: #ffffff; /* Texte en blanc */
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            text-align: center;
-            padding: 50px;
-            background: #2a2a2a;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            margin: 20px;
-        }
-
-        .letters {
-            font-size: 5em;
-            color: #66ff66; /* Couleur des lettres */
-            display: inline-block;
-        }
-
-        #name h1 {
-            font-size: 2.5em;
-            margin: 20px 0;
-            color: #66ff66; /* Vert pour le nom */
-        }
-
-        #name h2 {
-            font-size: 1.5em;
-            margin: 10px 0;
-            color: #ffffff; /* Blanc pour le sous-titre */
-        }
-
-        .content {
-            padding: 20px;
-            margin: 20px;
-            background: #3a3a3a;
-            color: #ffffff; /* Fond plus clair pour le contenu */
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .button-list {
-            display: grid;
-            gap: 20px; /* Espacement entre les boutons */
-            margin: 30px 20px; /* Espacement horizontal autour de la grille */
-        }
-
-        .button-item {
-            width: 200px; /* Largeur fixe */
-            background-color: #ffffff; /* Fond blanc pour les boutons */
-            color: #66ff66; /* Texte des boutons en vert */
-            text-decoration: none;
-            border: 2px solid #66ff66; /* Contour vert */
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start; /* Alignement en haut pour le texte */
-            padding: 15px; /* Espacement interne */
-            box-sizing: border-box; /* Inclure le padding dans les dimensions */
-            margin: 0; /* Pas de marge interne, utiliser le padding pour espacement */
-        }
-
-        .button-item img {
-            width: 100px; /* Largeur fixe pour rendre l'image carrée */
-            height: 100px; /* Hauteur fixe pour rendre l'image carrée */
-            object-fit: cover; /* Couvrir sans déformer l'image */
-            border-radius: 5px; /* Coins arrondis */
-        }
-
-        .button-item span {
-            text-align: center;
-            font-size: 1.1em;
-            margin-top: 10px; /* Espacement entre l'image et le texte */
-        }
-
-        .button-item:hover {
-            background-color: #66ff66; /* Fond vert au survol */
-            color: #ffffff; /* Texte en blanc au survol */
-            transform: translateY(-5px);
-        }
-
-        footer {
-            text-align: center;
-            margin: 40px 0;
-            font-size: 0.9em;
-            color: #777;
-        }
-
-        /* Media Queries pour les différentes tailles d'écran */
-        @media (max-width: 425px) {
-            .button-list {
-                grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les écrans de 425px */
-                padding: 0 15px; /* Espacement latéral pour les boutons */
-                margin: 30px 5%; /* Marges horizontales pour espacement par rapport aux bords */
-            }
-            .button-item {
-                height: auto; /* Hauteur automatique pour les petits écrans */
-            }
-        }
-
-        @media (min-width: 426px) and (max-width: 1024px) {
-            .button-list {
-                grid-template-columns: repeat(3, 1fr); /* 3 colonnes pour les écrans entre 426px et 1024px */
-            }
-        }
-
-        @media (min-width: 1025px) {
-            .button-list {
-                grid-template-columns: repeat(3, 1fr); /* 3 colonnes pour les écrans plus larges */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 
 <body>
-    <div class="container">
+    <header class="header">
         <div class="letters">
             <span id="R">R</span>
             <span id="A">A</span>
         </div>
-        <div id="name" class="hidden">
+        <div id="name" class="name">
             <h1>Raphaël ATTIAS</h1>
             <h2>Étudiant en administration de système sécurisé</h2>
         </div>
-    </div>
+    </header>
 
-    <div class="content">
+    <main class="content">
         <p>
             Fortement investi dans le domaine de la cybersécurité, je combine créativité, polyvalence et rigueur. Relever des défis complexes tout en respectant les délais est un moteur dans mon travail. Mon ambition est de mettre à profit mon sens de l’innovation, ainsi que ma capacité à m'adapter rapidement aux besoins de chaque projet. Curieux de nature, je nourris un profond désir d’apprentissage continu, avec pour objectif de contribuer de manière significative à chaque mission qui m’est confiée.
         </p>
-    </div>
+    </main>
 
     <section class="button-list">
         <a href="perso.html" class="button-item">
@@ -172,7 +54,7 @@
         </a>
     </section>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; 2024 Raphaël ATTIAS. Tous droits réservés.</p>
     </footer>
 

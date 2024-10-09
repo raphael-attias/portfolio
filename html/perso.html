@@ -57,6 +57,18 @@
             font-size: 0.9em;
             color: #777;
         }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .image-container img {
+            width: 100px; /* Taille fixe pour les images */
+            height: 100px; /* Taille fixe pour les images */
+            object-fit: cover; /* Pour garder le ratio */
+            border-radius: 5px; /* Coins arrondis pour les images */
+        }
     </style>
 </head>
 <body>
@@ -81,6 +93,10 @@
                 <li>Hébergement de mes sites web</li>
                 <li>Proxy Web pour redirection des requêtes spécifiques vers mon serveur de stockage</li>
             </ul>
+            <div class="image-container">
+                <img src="rpicaseapple.jpg" alt="Serveur Raspberry Pi">
+                <img src="rpi caseprint.jpg" alt="Boîtier Raspberry Pi">
+            </div>
         </div>
 
         <div class="project">
@@ -98,6 +114,10 @@
                 <li>Serveur SAMBA et SFTP</li>
                 <li>Serveur de gestion vidéo pour caméra de surveillance (Agent DVR)</li>
             </ul>
+            <div class="image-container">
+                <img src="startrpi.jpg" alt="Serveur DIY avec MotionEye">
+                <img src="motion eye openingrpio.jpg" alt="Configuration MotionEye">
+            </div>
         </div>
 
         <div class="project">
@@ -109,6 +129,9 @@
                 <li>Liens vers mes profils LinkedIn et GitHub</li>
                 <li>Effets visuels dynamiques avec Particles.js</li>
             </ul>
+            <div class="image-container">
+                <img src="rpicaseapple.jpg" alt="Site Web Personnel">
+            </div>
         </div>
 
         <div class="project">
@@ -120,10 +143,13 @@
                 <li>Enregistrement et sauvegarde sur mon serveur de stockage</li>
                 <li>Interface web accessible en réseau local</li>
             </ul>
+            <div class="image-container">
+                <img src="rpicaseapple.jpg" alt="Camera DIY">
+            </div>
         </div>
 
         <div class="project">
-            <h3>5. Flipper Zero - Exploration des fréquences radio</h3>
+            <h3>5. Flipper Zero - Exploration des Fréquences Radio</h3>
             <p>Le <strong>Flipper Zero</strong> est un outil polyvalent que j'utilise pour développer des compétences en radiofréquences, NFC, RFID, et autres technologies sans fil. Cela m'a permis de comprendre des protocoles de communication complexes utilisés dans la sécurité et les systèmes intégrés.</p>
             <h4>Compétences développées</h4>
             <ul>
@@ -131,6 +157,10 @@
                 <li>Écoute et analyse des transmissions radio</li>
                 <li>Exploration des communications infrarouges et des systèmes sans fil</li>
             </ul>
+            <div class="image-container">
+                <img src="rfone.jpg" alt="Flipper Zero">
+                <img src="flipperzerobox.jpg" alt="Boîtier Flipper Zero">
+            </div>
         </div>
 
         <div class="project">
@@ -142,6 +172,9 @@
                 <li>Simulation de transmissions radio</li>
                 <li>Capture et décodage de signaux pour des projets de sécurité</li>
             </ul>
+            <div class="image-container">
+                <img src="flipperzerobox.jpg" alt="HackRF One">
+            </div>
         </div>
 
         <div class="project">
@@ -151,23 +184,15 @@
             <ul>
                 <li>Émulation de cartes RFID</li>
                 <li>Analyse des systèmes de contrôle d'accès</li>
-                <li>Simulation de dispositifs NFC pour le test de sécurité</li>
+                <li>Simulation de dispositifs NFC</li>
             </ul>
+            <div class="image-container">
+                <img src="flipperzerobox.jpg" alt="Chameleon Ultra">
+            </div>
         </div>
 
         <div class="project">
-            <h3>8. Impression 3D</h3>
-            <p>Je me suis procuré une imprimante 3D à résine pour développer mes compétences en modélisation 3D. Cela m'a permis de concevoir et d'imprimer des boîtiers sur mesure pour divers projets électroniques.</p>
-            <h4>Utilisations</h4>
-            <ul>
-                <li>Boîtiers pour Raspberry Pi</li>
-                <li>Supports pour ESP32 et autres composants</li>
-                <li>Création d'objets fonctionnels non disponibles dans le commerce</li>
-            </ul>
-        </div>
-
-        <div class="project">
-            <h3>9. Localisateur d'IP en Python</h3>
+            <h3>8. Localisateur d'IP en Python</h3>
             <p>Ce script Python permet de localiser une adresse IP en utilisant l'API gratuite de DbIpCity. Il fournit des informations sur la ville, la région et le pays associés à l'adresse IP, ainsi que les coordonnées géographiques.</p>
             <h4>Utilisation</h4>
             <ul>
@@ -180,6 +205,22 @@
                 <li>ip2geotools</li>
                 <li>geopy</li>
             </ul>
+            <div class="image-container">
+                <img src="rpicaseapple.jpg" alt="Localisateur d'IP">
+            </div>
+        </div>
+
+        <div class="project">
+            <h3>9. Site Web pour des Étudiantes Créatrices de Bracelets</h3>
+            <p>Site développé en Next.js pour permettre aux étudiantes de créer et vendre leurs propres bracelets artisanaux. Accessible sur <a href="https://clanilie-creation.littlestorm.eu" style="color: #00bfff;">clanilie-creation.littlestorm.eu</a>.</p>
+            <h4>Fonctionnalités</h4>
+            <ul>
+                <li>Site vitrine</li>
+                <li>Page de contact</li>
+            </ul>
+            <div class="image-container">
+                <img src="rpicaseapple.jpg" alt="Site Web pour Créatrices de Bracelets">
+            </div>
         </div>
 
         <div class="project">
@@ -190,6 +231,23 @@
                 <li>Exécutez le script après avoir placé le fichier "Décodage.json" dans le même répertoire.</li>
                 <li>Utilisez les boutons pour entrer le code Morse et le décoder.</li>
             </ul>
+            <div class="image-container">
+                <img src="rpicaseapple.jpg" alt="Décodeur de Code Morse">
+            </div>
+        </div>
+
+        <div class="project">
+            <h3>11. Calculateur d'Âge en Python</h3>
+            <p>Ce script propose un calculateur d'âge permettant de calculer l'âge en années, de déterminer l'année de naissance ou de spécifier l'âge en années, mois et jours.</p>
+            <h4>Options</h4>
+            <ul>
+                <li>Calculer l'âge (année près)</li>
+                <li>Calculer l'année de naissance</li>
+                <li>Calculer l'âge (année, mois, jour près)</li>
+            </ul>
+            <div class="image-container">
+                <img src="rpicaseapple.jpg" alt="Calculateur d'Âge">
+            </div>
         </div>
 
         <footer>

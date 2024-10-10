@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raphaël Attias | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/index.css"> <!-- External CSS File -->
 </head>
 
 <body>
     <header class="header">
         <div class="letters">
-            <span id="R">R</span>
-            <span id="A">A</span>
+            <span id="R">R</span> <!-- Letter R -->
+            <span id="A">A</span> <!-- Letter A -->
         </div>
-        <div id="name" class="name hidden"> <!-- Ajout de la classe hidden pour masquer le nom au départ -->
+        <div id="name" class="name hidden"> <!-- Hidden name, shown later by JavaScript -->
             <h1>Raphaël ATTIAS</h1>
             <h2>Étudiant en administration de système sécurisé</h2>
         </div>
@@ -42,7 +42,7 @@
         </a>
         <a href="sport.html" class="button-item">
             <img src="../image/gpen.jpg" alt="Sport Icon">
-            <span>Sport</span>
+            <span>à propos de moi</span>
         </a>
         <a href="competence.html" class="button-item">
             <img src="../image/openingrpi.jpg" alt="Compétences Icon">
@@ -64,16 +64,15 @@
             const letterA = document.getElementById('A');
             const nameContainer = document.getElementById('name');
 
-            // Lancer l'animation des lettres
+            // Start the animation for the letters R and A
             letterR.classList.add('animate');
             letterA.classList.add('animate');
 
-            // Attendre la fin de l'animation des lettres
+            // After the animation, reveal the name
             setTimeout(() => {
-                // Afficher le nom "Raphaël ATTIAS" après 750ms
                 nameContainer.classList.remove('hidden');
                 nameContainer.classList.add('visible');
-            }, 750); // Correspondre à la durée de l'animation
+            }, 750); // Time matching the animation duration
         };
 
         window.onscroll = function () {

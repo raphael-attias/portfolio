@@ -146,3 +146,35 @@ html, body {
     background-color: #2a2a2a; /* Exemples d'effets déclenchés par le scroll */
     transition: background-color 0.3s ease;
 }
+
+/* Animation for the letters R and A */
+@keyframes animateR {
+    0% {
+        transform: translateX(-100%) rotate(-90deg); /* Start from the left, rotated */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotate(0); /* End at the center, no rotation */
+        opacity: 1;
+    }
+}
+
+@keyframes animateA {
+    0% {
+        transform: translateX(100%) rotate(90deg); /* Start from the right, rotated */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotate(0); /* End at the center, no rotation */
+        opacity: 1;
+    }
+}
+
+/* Triggering the animation for R and A */
+#R.animate {
+    animation: animateR 0.75s ease-out forwards; /* Animate the "R" */
+}
+
+#A.animate {
+    animation: animateA 0.75s ease-out forwards; /* Animate the "A" */
+}

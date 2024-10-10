@@ -12,6 +12,43 @@
             color: #f0f0f0; /* Couleur claire pour le texte */
             padding: 10px;
         }
+        /* Styles pour la barre de navigation */
+        .navbar {
+            background-color: #2a2a2a; /* Fond sombre */
+            padding: 15px 0; /* Espacement vertical */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Ombre */
+            position: sticky; /* Rendre la barre de navigation fixe */
+            top: 0; /* Positionner en haut de la page */
+            z-index: 1000; /* Pour s'assurer qu'elle reste au-dessus du contenu */
+        }
+
+        .navbar-container {
+            max-width: 900px; /* Largeur maximale pour centrer le contenu */
+            margin: 0 auto; /* Centrer le conteneur */
+            display: flex; /* Flexbox pour aligner les éléments */
+            justify-content: space-around; /* Espacement égal entre les éléments */
+            flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+        }
+
+        .nav-item {
+            color: #00ff00; /* Couleur du texte */
+            font-weight: bold; /* Mettre le texte en gras */
+            text-decoration: none; /* Enlever le soulignement */
+            padding: 10px 15px; /* Espacement autour du texte */
+            border-radius: 5px; /* Coins arrondis */
+            transition: background 0.3s, color 0.3s; /* Transition douce pour le survol */
+        }
+
+        .nav-item:hover {
+            background-color: #00ff00; /* Couleur de fond au survol */
+            color: #2a2a2a; /* Texte plus sombre au survol */
+        }
+
+        .nav-item.active {
+            background-color: #00ff00; /* Couleur de fond active */
+            color: #2a2a2a; /* Couleur de texte active */
+        }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -50,6 +87,18 @@
     </style>
 </head>
 <body>
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="nav-item">Accueil</a>
+            <a href="perso.html" class="nav-item">Projets Personnels</a>
+            <a href="ecole.html" class="nav-item">Projets École</a>
+            <a href="sport.html" class="nav-item">À propos de moi</a>
+            <a href="competence.html" class="nav-item">Compétences</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </div>
+    </nav>
+
     <div class="container">
         <!-- Présentation du cursus -->
         <h1>Mon Cursus</h1>

@@ -3,102 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactez-moi</title>
+    <title>Contact</title>
     <style>
         body {
-            background-color: #2a2a2a; /* Fond sombre */
-            color: #66ff66; /* Vert vision nocturne pour le texte */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #1e1e1e; /* Fond sombre */
+            color: #f0f0f0; /* Texte clair */
+            padding: 10px;
         }
-        form {
-            max-width: 600px;
-            margin: 20px auto;
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
             padding: 20px;
-            background-color: #2a2a2a; /* Fond sombre pour le formulaire */
-            border: 2px solid #66ff66; /* Bordure verte */
+            background: #2a2a2a; /* Fond légèrement plus clair pour le conteneur */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 8px;
         }
-        label {
-            display: block;
-            margin-top: 10px;
+        h1 {
+            color: #00ff00; /* Vert fluo pour le titre principal */
+            text-align: center;
         }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border-radius: 4px;
-            border: 1px solid #66ff66; /* Bordure verte autour des champs */
-            background-color: #2a2a2a; /* Arrière-plan des champs */
-            color: #66ff66; /* Texte vert pour les entrées */
-            box-sizing: border-box;
-        }
-        input::placeholder, textarea::placeholder {
-            color: #66ff66; /* Couleur des placeholders */
-        }
-        button {
+        h2 {
+            color: #00ff00; /* Vert fluo pour les sous-titres */
             margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #66ff66; /* Bouton vert */
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            border-bottom: 2px solid #00ff00; /* Bordure verte */
+            padding-bottom: 5px;
         }
-        button:hover {
-            background-color: #4ccc4c; /* Vert légèrement plus foncé au survol */
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #b9e18b; /* Couleur de fond des boutons */
+            color: #016435; /* Couleur du texte */
+            font-weight: bold;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            margin: 10px 0; /* Espacement entre les boutons */
+            text-decoration: none; /* Enlever le soulignement des liens */
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #016435; /* Couleur au survol */
+        }
+        .icon {
+            margin-right: 8px; /* Espacement entre l'icône et le texte */
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Contact</h1>
+        <h2>Me Contacter</h2>
+        
+        <a href="mailto:rapatt@littlestorm.eu" class="button">
+            <img src="/images/logos/mail.png" alt="Email Icon" class="icon" width="24" height="24">
+            Envoyer un email
+        </a>
 
-    <h2 style="text-align: center;">Contactez-moi</h2>
-    <form id="contact-form">
-        <label for="nom">Nom Prénom :</label>
-        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom/Prénom" required>
+        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="button">
+            <img src="/images/logos/linkedin.png" alt="LinkedIn Icon" class="icon" width="24" height="24">
+            Suivre sur LinkedIn
+        </a>
+    </div>
 
-        <label for="email">Adresse e-mail :</label>
-        <input type="email" id="email" name="email" placeholder="Entrez votre e-mail" required>
-
-        <label for="sujet">Objet :</label>
-        <input type="text" id="sujet" name="sujet" placeholder="Entrez votre objets" required>
-
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="5" placeholder="Tapez votre message ici..." required></textarea>
-
-        <button type="submit">Envoyer</button>
-    </form>
-
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            e.preventDefault(); // Empêcher l'envoi du formulaire standard
-
-            const formData = {
-                nom: document.getElementById('nom').value,
-                email: document.getElementById('email').value,
-                sujet: document.getElementById('sujet').value,
-                message: document.getElementById('message').value
-            };
-
-            // Envoyer les données au serveur Flask
-            fetch('http://localhost:5000/envoyer-mail', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert(data.message); // Message de confirmation
-            })
-            .catch(error => {
-                alert("Erreur lors de l'envoi du message. Veuillez réessayer plus tard.");
-                console.error('Erreur:', error);
-            });
-        });
-    </script>
-
+    <footer>
+        <p>&copy; 2024 Votre Nom. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>

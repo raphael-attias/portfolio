@@ -11,7 +11,7 @@
             line-height: 1.6;
             background-color: #1e1e1e; /* Fond sombre */
             color: #ffffff; /* Texte en blanc */
-            padding: 20px;
+            padding: 10px;
         }
 
         .container {
@@ -47,12 +47,21 @@
             margin-bottom: 15px;
         }
 
+        ul.projets {
+            padding-left: 0;
+        }
+
+        ul.projets li {
+            display: inline-block; /* Mettre les boutons côte à côte */
+            margin-right: 5px; /* Espacement de 5px entre les éléments */
+        }
+
         a {
             color: #66ff66; /* Liens en vert */
             text-decoration: none;
             border: 2px solid #66ff66; /* Contour des boutons en vert */
             border-radius: 5px;
-            padding: 10px 15px;
+            padding: 8px 12px; /* Taille réduite des boutons */
             display: inline-block;
             transition: background-color 0.3s, color 0.3s; /* Transition pour le hover */
         }
@@ -87,7 +96,7 @@
 
         <h2>Projets</h2>
         <p>Pour voir mes compétences en action, n'hésitez pas à consulter mes projets :</p>
-        <ul>
+        <ul class="projets">
             <li><a href="lien_vers_projets_personnels.html">Projets Personnels</a></li>
             <li><a href="lien_vers_projets_ecole.html">Projets de l'École</a></li>
         </ul>

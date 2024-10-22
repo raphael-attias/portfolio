@@ -5,68 +5,281 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <style>
-        body {
+        /* Variables CSS */
+        :root {
+            --main-bg-color: #1e1e1e;
+            --container-bg-color: #2a2a2a;
+            --accent-color: #00ff00;
+            --text-color-light: #f0f0f0;
+            --text-color-dark: #2a2a2a;
+            --button-border-color: #00ff00; /* Couleur du contour des boutons */
+        }
+
+        /* Reset et base */
+        html, body {
+            height: 100%;
+            margin: 0;
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: #1e1e1e; /* Fond sombre */
-            color: #f0f0f0; /* Texte clair */
-            padding: 10px;
+            background-color: var(--main-bg-color);
+            color: var(--text-color-light);
         }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Conteneur principal */
         .container {
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
-            background: #2a2a2a; /* Fond légèrement plus clair pour le conteneur */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
+            background: var(--container-bg-color);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            width: 95%;
+            flex-grow: 1;
         }
-        h1 {
-            color: #00ff00; /* Vert fluo pour le titre principal */
+
+        h1, h2 {
+            color: var(--accent-color);
             text-align: center;
         }
+
         h2 {
-            color: #00ff00; /* Vert fluo pour les sous-titres */
             margin-top: 20px;
-            border-bottom: 2px solid #00ff00; /* Bordure verte */
+            border-bottom: 2px solid var(--accent-color);
             padding-bottom: 5px;
         }
+
+        /* Barre de navigation */
+        .navbar {
+            background-color: var(--container-bg-color);
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Liens de navigation */
+        .nav-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            color: var(--accent-color);
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: var(--accent-color);
+            color: var(--text-color-dark);
+        }
+
+        /* Menu hamburger (mobile) */
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 4px 0;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        /* Nav cachée par défaut */
+        .nav-items {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Nav ouverte sur mobile avec deux colonnes */
+        .nav-items.open {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+            gap: 10px; /* Espace entre les colonnes */
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Style pour les boutons avec bordure */
         .button {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #b9e18b; /* Couleur de fond des boutons */
-            color: #016435; /* Couleur du texte */
+            background: var(--accent-color);
+            color: var(--text-color-dark);
             font-weight: bold;
-            padding: 10px 15px;
-            border: none;
+            padding: 10px 20px;
+            border: 2px solid var(--button-border-color); /* Bordure du bouton */
             border-radius: 5px;
             width: 100%;
-            margin: 10px 0; /* Espacement entre les boutons */
-            text-decoration: none; /* Enlever le soulignement des liens */
-            transition: background 0.3s;
+            margin: 15px 0;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
+
         .button:hover {
-            background: #016435; /* Couleur au survol */
+            background: #00cc00;
+            transform: translateY(-2px);
         }
+
         .icon {
-            margin-right: 8px; /* Espacement entre l'icône et le texte */
+            margin-right: 8px;
         }
+
+        /* Footer */
         footer {
+            background-color: var(--container-bg-color);
+            color: var(--text-color-light);
+            padding: 20px;
             text-align: center;
-            margin-top: 40px;
             font-size: 0.9em;
-            color: #777;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-container p {
+            margin: 5px 0;
+            line-height: 1.4;
+        }
+
+        .footer-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: #00cc00;
+        }
+
+        .social-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icon {
+            transition: transform 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .nav-item {
+                padding: 8px 10px; /* Réduction du padding sur mobile */
+                font-size: 0.9rem; /* Taille de police plus petite */
+                text-align: center;
+            }
+
+            .nav-toggle {
+                display: flex; /* Affiche le menu hamburger */
+            }
+
+            .nav-items {
+                display: none;
+            }
+
+            .nav-items.open {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+                gap: 10px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1, h2 {
+                font-size: 1.5rem;
+            }
+
+            .footer-container {
+                font-size: 0.8em;
+            }
+
+            .button {
+                width: 80%; /* Encore plus fin sur les très petits écrans */
+                padding: 8px 0;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="nav-toggle" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="nav-items">
+                <a href="index.html" class="nav-item">Accueil</a>
+                <a href="perso.html" class="nav-item">Projets Perso</a>
+                <a href="ecole.html" class="nav-item">Projets École</a>
+                <a href="sport.html" class="nav-item">À propos</a>
+                <a href="competence.html" class="nav-item">Compétences</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
     <div class="container">
         <h1>Contact</h1>
         <h2>Me Contacter</h2>
         
         <a href="mailto:rapatt@littlestorm.eu" class="button">
             <img src="/images/logos/mail.png" alt="Email Icon" class="icon" width="24" height="24">
-            Envoyer un email
+            Envoyer un email --> rapatt@littlestorm.eu
         </a>
 
         <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="button">
@@ -75,8 +288,29 @@
         </a>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Votre Nom. Tous droits réservés.</p>
+        <div class="footer-container">
+            <p>Ce site est la propriété intellectuelle de Rapatt. Tous les projets, contenus et créations sont protégés par les droits de la propriété intellectuelle.</p>
+            <p><a href="https://raphael.littlestorm.eu" target="_blank" rel="noopener noreferrer" class="footer-link">Created by Rapatt</a></p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/logos/linkedin.png" alt="LinkedIn" class="social-icon" width="24" height="24">
+                </a>
+                <a href="https://github.com/your-github-profile" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/logos/github.png" alt="GitHub" class="social-icon" width="24" height="24">
+                </a>
+            </div>
+        </div>
     </footer>
+
+    <!-- Script JS pour le menu hamburger -->
+    <script>
+        function toggleNav() {
+            const navItems = document.querySelector('.nav-items');
+            navItems.classList.toggle('open');
+        }
+    </script>
+
 </body>
 </html>

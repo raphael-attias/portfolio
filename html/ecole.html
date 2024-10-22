@@ -12,41 +12,108 @@
             color: #f0f0f0; /* Couleur claire pour le texte */
             padding: 10px;
         }
-        /* Styles pour la barre de navigation */
+
+        /* Barre de navigation */
         .navbar {
-            background-color: #2a2a2a; /* Fond sombre */
-            padding: 15px 0; /* Espacement vertical */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Ombre */
-            position: sticky; /* Rendre la barre de navigation fixe */
-            top: 0; /* Positionner en haut de la page */
-            z-index: 1000; /* Pour s'assurer qu'elle reste au-dessus du contenu */
+            background-color: var(--container-bg-color);
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .navbar-container {
-            max-width: 900px; /* Largeur maximale pour centrer le contenu */
-            margin: 0 auto; /* Centrer le conteneur */
-            display: flex; /* Flexbox pour aligner les éléments */
-            justify-content: space-around; /* Espacement égal entre les éléments */
-            flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Liens de navigation */
+        .nav-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .nav-item {
-            color: #00ff00; /* Couleur du texte */
-            font-weight: bold; /* Mettre le texte en gras */
-            text-decoration: none; /* Enlever le soulignement */
-            padding: 10px 15px; /* Espacement autour du texte */
-            border-radius: 5px; /* Coins arrondis */
-            transition: background 0.3s, color 0.3s; /* Transition douce pour le survol */
+            color: var(--accent-color);
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
         }
 
         .nav-item:hover {
-            background-color: #00ff00; /* Couleur de fond au survol */
-            color: #2a2a2a; /* Texte plus sombre au survol */
+            background-color: var(--accent-color);
+            color: var(--text-color-dark);
         }
 
-        .nav-item.active {
-            background-color: #00ff00; /* Couleur de fond active */
-            color: #2a2a2a; /* Couleur de texte active */
+        /* Menu hamburger (mobile) */
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 4px 0;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        /* Nav cachée par défaut */
+        .nav-items {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Nav ouverte sur mobile avec deux colonnes */
+        .nav-items.open {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+            gap: 10px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .nav-item {
+                padding: 8px 10px; /* Réduction du padding sur mobile */
+                font-size: 0.9rem; /* Taille de police plus petite */
+                text-align: center;
+            }
+
+            .nav-toggle {
+                display: flex; /* Affiche le menu hamburger */
+            }
+
+            .nav-items {
+                display: none;
+            }
+
+            .nav-items.open {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+                gap: 10px;
+                width: 100%;
+            }
         }
 
         .container {
@@ -57,29 +124,35 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 8px;
         }
+
         h1, h2, h3 {
-            color: #00ff00; /* Bleu cyan pour les titres */
+            color: #00ff00; /* Vert fluo pour les titres */
         }
+
         .unit {
             background: #3c3c3c; /* Fond sombre pour chaque unité */
-            border-left: 5px solid #00ff00; /* Bordure verte pour le style cybersécurité */
+            border-left: 5px solid #00ff00; /* Bordure verte */
             margin-bottom: 20px;
             padding: 15px;
             border-radius: 5px;
         }
+
         .unit-title {
             font-size: 1.2em;
             margin-bottom: 10px;
             color: #00ff00; /* Couleur du titre de l'unité */
         }
+
         ul {
             list-style: disc;
             padding-left: 20px;
         }
+
         li {
             margin-bottom: 10px;
             color: #f0f0f0; /* Couleur des éléments de liste */
         }
+
         p {
             margin-bottom: 15px;
             color: #f0f0f0; /* Couleur des paragraphes */
@@ -90,23 +163,30 @@
     <!-- Barre de navigation -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="index.html" class="nav-item">Accueil</a>
-            <a href="perso.html" class="nav-item">Projets Personnels</a>
-            <a href="ecole.html" class="nav-item">Projets École</a>
-            <a href="sport.html" class="nav-item">À propos de moi</a>
-            <a href="competence.html" class="nav-item">Compétences</a>
-            <a href="contact.html" class="nav-item">Contact</a>
+            <a href="#" class="nav-toggle" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="nav-items">
+                <a href="index.html" class="nav-item">Accueil</a>
+                <a href="perso.html" class="nav-item">Projets Perso</a>
+                <a href="ecole.html" class="nav-item">Projets École</a>
+                <a href="sport.html" class="nav-item">À propos</a>
+                <a href="competence.html" class="nav-item">Compétences</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </div>
         </div>
     </nav>
 
     <div class="container">
         <!-- Présentation du cursus -->
         <h1>Mon Cursus</h1>
-        <p>Au cours de ma formation, j'ai eu l'opportunité d'acquérir des compétences variées en développement, administration systèmes et réseaux, ainsi qu'en conception numérique. Durant la première année, j'ai approfondi mes connaissances en développement d'applications web et desktop, ainsi qu'en programmation et algorithmie, avec des projets en HTML, CSS, JavaScript, PHP, et SQL. J'ai également découvert les bases de l'électronique et des objets connectés (IoT).</p>
+        <p>Au cours de ma formation, j'ai acquis des compétences variées en développement, administration systèmes et réseaux, ainsi qu'en conception numérique. Durant la première année, j'ai approfondi mes connaissances en développement d'applications web et desktop, ainsi qu'en programmation et algorithmie, avec des projets en HTML, CSS, JavaScript, PHP, et SQL. J'ai également découvert les bases de l'électronique et des objets connectés (IoT).</p>
         
-        <p>En deuxième année, mon cursus s'est orienté vers l'administration des systèmes et des réseaux, avec des projets tels que la mise en place d'un serveur VPN, la configuration de RAID, et la création d'un pare-feu personnalisé. J'ai également travaillé sur des projets d'analyse forensique, renforçant ma compréhension des aspects de sécurité informatique.</p>
+        <p>En deuxième année, mon cursus s'est orienté vers l'administration des systèmes et des réseaux, avec des projets tels que la mise en place d'un serveur VPN, la configuration de RAID, et la création d'un pare-feu personnalisé. J'ai également travaillé sur des projets d'analyse forensique, renforçant ma compréhension de la sécurité informatique.</p>
         
-        <p>Cette formation m'a permis de développer une polyvalence technique, en passant de la programmation à la gestion des systèmes et réseaux, tout en touchant à des domaines créatifs tels que la création de contenu audiovisuel. Grâce à ce parcours, je me sens prêt à relever des défis variés dans le domaine du numérique.</p>
+        <p>Cette formation m'a permis de développer une polyvalence technique, en passant de la programmation à la gestion des systèmes et réseaux, tout en touchant à des domaines créatifs comme la création de contenu audiovisuel. Grâce à ce parcours, je me sens prêt à relever des défis variés dans le domaine du numérique.</p>
         
         <!-- Description des projets -->
         <h1>Projets Scolaires</h1>
@@ -118,7 +198,7 @@
                 <li>Maquetter une application</li>
                 <li>Développer une interface utilisateur de type desktop</li>
                 <li>Développer des composants d’accès aux données</li>
-                <li>Développer la partie front-end d’une interface utilisateur web (HTML, CSS, JS…)</li>
+                <li>Développer la partie front-end d’une interface utilisateur web (HTML, CSS, JS)</li>
                 <li>Développer la partie back-end d’une interface utilisateur web (PHP, SQL)</li>
             </ul>
         </div>
@@ -129,15 +209,15 @@
                 <li>Électronique, IoT</li>
                 <li>Installation de systèmes d’exploitation</li>
                 <li>Virtualisation</li>
-                <li>Apprendre à utiliser Linux, Shell, Scripting</li>
-                <li>Apprendre des notions de développement et d’algorithmie</li>
+                <li>Utilisation de Linux, Shell, Scripting</li>
+                <li>Notions de développement et d’algorithmie</li>
             </ul>
         </div>
 
         <div class="unit">
             <h3 class="unit-title">UNIT 3 : Ouverture sur les Spécialités du Numérique</h3>
             <ul>
-                <li>Création de montages vidéos, comprendre les fondamentaux des techniques audionumériques</li>
+                <li>Création de montages vidéos, techniques audionumériques</li>
                 <li>Découverte des métiers du design et du graphisme numérique</li>
             </ul>
         </div>
@@ -170,5 +250,13 @@
             </ul>
         </div>
     </div>
+
+    <!-- Script JS pour le menu hamburger -->
+    <script>
+        function toggleNav() {
+            const navItems = document.querySelector('.nav-items');
+            navItems.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>

@@ -9,66 +9,139 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            background-color: #1e1e1e; /* Fond sombre */
-            color: #f0f0f0; /* Texte clair */
+            background-color: #1e1e1e;
+            color: #f0f0f0;
             padding: 10px;
         }
 
-        /* Styles pour la barre de navigation */
+        /* Variables CSS pour faciliter la personnalisation */
+        :root {
+            --container-bg-color: #2a2a2a;
+            --accent-color: #00ff00;
+            --text-color-dark: #1e1e1e;
+        }
+
+        /* Barre de navigation */
         .navbar {
-            background-color: #2a2a2a; /* Fond sombre */
-            padding: 15px 0; /* Espacement vertical */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Ombre */
-            position: sticky; /* Rendre la barre de navigation fixe */
-            top: 0; /* Positionner en haut de la page */
-            z-index: 1000; /* Pour s'assurer qu'elle reste au-dessus du contenu */
+            background-color: var(--container-bg-color);
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .navbar-container {
-            max-width: 900px; /* Largeur maximale pour centrer le contenu */
-            margin: 0 auto; /* Centrer le conteneur */
-            display: flex; /* Flexbox pour aligner les éléments */
-            justify-content: space-around; /* Espacement égal entre les éléments */
-            flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Liens de navigation */
+        .nav-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .nav-item {
-            color: #00ff00; /* Couleur du texte */
-            font-weight: bold; /* Mettre le texte en gras */
-            text-decoration: none; /* Enlever le soulignement */
-            padding: 10px 15px; /* Espacement autour du texte */
-            border-radius: 5px; /* Coins arrondis */
-            transition: background 0.3s, color 0.3s; /* Transition douce pour le survol */
+            color: var(--accent-color);
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
         }
 
         .nav-item:hover {
-            background-color: #00ff00; /* Couleur de fond au survol */
-            color: #2a2a2a; /* Texte plus sombre au survol */
+            background-color: var(--accent-color);
+            color: var(--text-color-dark);
         }
 
-        .nav-item.active {
-            background-color: #00ff00; /* Couleur de fond active */
-            color: #2a2a2a; /* Couleur de texte active */
+        /* Menu hamburger (mobile) */
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 4px 0;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        /* Nav cachée par défaut */
+        .nav-items {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Nav ouverte sur mobile avec deux colonnes */
+        .nav-items.open {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .nav-item {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-items {
+                display: none;
+            }
+
+            .nav-items.open {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                width: 100%;
+            }
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            background: #2a2a2a; /* Fond légèrement plus clair pour le conteneur */
+            background: var(--container-bg-color);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 8px;
         }
 
         h1 {
-            color: #00ff00; /* Vert pour le titre principal */
+            color: var(--accent-color);
             text-align: center;
         }
 
         h2 {
-            color: #00ff00; /* Vert fluo pour les sous-titres */
+            color: var(--accent-color);
             margin-top: 20px;
-            border-bottom: 2px solid #00ff00; /* Bordure verte */
+            border-bottom: 2px solid var(--accent-color);
             padding-bottom: 5px;
         }
 
@@ -88,25 +161,25 @@
         }
 
         ul.projets li {
-            display: inline-block; /* Mettre les boutons côte à côte */
-            margin-right: 5px; /* Espacement de 5px entre les éléments */
+            display: inline-block;
+            margin-right: 5px;
         }
 
         /* Styles pour les boutons de projet spécifiques */
         .projets a {
-            color: #00ff00; /* Liens en vert clair */
+            color: var(--accent-color);
             text-decoration: none;
-            border: 2px solid #00ff00; /* Contour des boutons en vert clair */
+            border: 2px solid var(--accent-color);
             border-radius: 5px;
-            padding: 8px 12px; /* Taille réduite des boutons */
+            padding: 8px 12px;
             display: inline-block;
-            transition: background-color 0.3s, color 0.3s; /* Transition pour le hover */
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .projets a:hover {
-            background-color: #00ff00; /* Fond vert au survol */
-            color: #ffffff; /* Texte blanc au survol */
-            text-decoration: none; /* Pas de soulignement au survol */
+            background-color: var(--accent-color);
+            color: #ffffff;
+            text-decoration: none;
         }
 
         footer {
@@ -122,12 +195,19 @@
     <!-- Barre de navigation -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="index.html" class="nav-item">Accueil</a>
-            <a href="perso.html" class="nav-item">Projets Personnels</a>
-            <a href="ecole.html" class="nav-item">Projets de l'École</a>
-            <a href="sport.html" class="nav-item">À propos de moi</a>
-            <a href="competence.html" class="nav-item active">Compétences</a> <!-- Active pour cette page -->
-            <a href="contact.html" class="nav-item">Contact</a>
+            <a href="#" class="nav-toggle" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="nav-items">
+                <a href="index.html" class="nav-item">Accueil</a>
+                <a href="perso.html" class="nav-item">Projets Perso</a>
+                <a href="ecole.html" class="nav-item">Projets École</a>
+                <a href="sport.html" class="nav-item">À propos</a>
+                <a href="competence.html" class="nav-item">Compétences</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </div>
         </div>
     </nav>
 
@@ -151,12 +231,20 @@
         </ul>
 
         <h2>Contact</h2>
-        <p>Pour toute question ou demande, veuillez me <a class="projets" href="contact.html">contacter</a>.</p>
+        <p>Pour toute question ou demande, veuillez me <a href="contact.html">contacter</a>.</p>
 
         <footer>
             <p>&copy; 2024 Raphaël ATTIAS. Tous droits réservés.</p>
         </footer>
     </div>
+
+    <!-- Script JS pour le menu hamburger -->
+    <script>
+        function toggleNav() {
+            const navItems = document.querySelector('.nav-items');
+            navItems.classList.toggle('open');
+        }
+    </script>
 </body>
 
 </html>

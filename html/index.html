@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +26,7 @@
             cursor: pointer;
             border-radius: 5px;
             transition: background 0.3s;
-            z-index: 1000; /* Ensures it stays above other content */
+            z-index: 1000;
         }
 
         .language-button:hover {
@@ -85,17 +84,7 @@
         <p>&copy; 2024 Raphaël ATTIAS. Tous droits réservés.</p>
     </footer>
 
-    <button class="language-button" id="toggle-translate" onclick="toggleTranslation()">English</button>
-
     <script>
-        // Function to set the language based on localStorage value
-        function setLanguage() {
-            const lang = localStorage.getItem('language') || 'fr';
-            if (lang === 'en') {
-                toggleTranslation(true);
-            }
-        }
-
         window.onload = function () {
             const letterR = document.getElementById('R');
             const letterA = document.getElementById('A');
@@ -110,53 +99,7 @@
                 nameContainer.classList.remove('hidden');
                 nameContainer.classList.add('visible');
             }, 750); // Time matching the animation duration
-
-            setLanguage(); // Set the language on page load
         };
-
-        let isEnglish = false; // Variable to track the current language
-
-        function toggleTranslation(initialize = false) {
-            const title = document.getElementById('main-title');
-            const subtitle = document.getElementById('subtitle');
-            const description = document.getElementById('description');
-            const button = document.getElementById('toggle-translate');
-
-            // Update button and content based on the current language
-            if (initialize || isEnglish) {
-                // Translate to French
-                title.textContent = "Raphaël ATTIAS";
-                subtitle.textContent = "Étudiant en administration de système sécurisé";
-                description.textContent = "Fortement investi dans le domaine de la cybersécurité, je combine créativité, polyvalence et rigueur. Relever des défis complexes tout en respectant les délais est un moteur dans mon travail. Mon ambition est de mettre à profit mon sens de l’innovation, ainsi que ma capacité à m'adapter rapidement aux besoins de chaque projet. Curieux de nature, je nourris un profond désir d’apprentissage continu, avec pour objectif de contribuer de manière significative à chaque mission qui m’est confiée.";
-
-                // Translate buttons
-                document.getElementById('projets-personnels-text').textContent = "Projets Personnels";
-                document.getElementById('projets-ecole-text').textContent = "Projets École";
-                document.getElementById('mon-github-text').textContent = "Mon GitHub";
-                document.getElementById('a-propos-text').textContent = "À propos de moi";
-                document.getElementById('competences-text').textContent = "Compétences";
-                document.getElementById('contact-text').textContent = "Contact";
-
-                button.textContent = "English"; // Change button text to English
-            } else {
-                // Translate to English
-                title.textContent = "Raphaël ATTIAS";
-                subtitle.textContent = "Student in Secure System Administration";
-                description.textContent = "Strongly invested in the field of cybersecurity, I combine creativity, versatility, and rigor. Tackling complex challenges while meeting deadlines drives my work. My ambition is to leverage my sense of innovation and my ability to adapt quickly to the needs of each project. Naturally curious, I have a deep desire for continuous learning, aiming to contribute significantly to every mission entrusted to me.";
-
-                // Translate buttons
-                document.getElementById('projets-personnels-text').textContent = "Personal Projects";
-                document.getElementById('projets-ecole-text').textContent = "School Projects";
-                document.getElementById('mon-github-text').textContent = "My GitHub";
-                document.getElementById('a-propos-text').textContent = "About Me";
-                document.getElementById('competences-text').textContent = "Skills";
-                document.getElementById('contact-text').textContent = "Contact";
-
-                button.textContent = "Français"; // Change button text to French
-            }
-            isEnglish = !initialize && !isEnglish; // Toggle the language state
-            localStorage.setItem('language', isEnglish ? 'en' : 'fr'); // Store language choice in localStorage
-        }
 
         window.onscroll = function () {
             const scrollPosition = window.scrollY || document.documentElement.scrollTop;
@@ -169,5 +112,4 @@
         };
     </script>
 </body>
-
 </html>

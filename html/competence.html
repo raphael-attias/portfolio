@@ -189,21 +189,24 @@
             color: #777;
         }
 
-        /* Styles pour le bouton de langue */
-        .language-button {
+        /* Styles pour le bouton contact */
+        .button-contact {
             background-color: var(--accent-color);
             color: var(--text-color-dark);
             border: none;
             border-radius: 5px;
-            padding: 10px 15px;
+            padding: 10px 20px;
             cursor: pointer;
             font-weight: bold;
             display: block;
-            margin: 20px auto;
+            text-align: center;
+            text-decoration: none;
             transition: background-color 0.3s, color 0.3s;
+            margin: 20px auto;
+            max-width: 200px;
         }
 
-        .language-button:hover {
+        .button-contact:hover {
             background-color: var(--text-color-dark);
             color: var(--accent-color);
         }
@@ -231,77 +234,36 @@
     </nav>
 
     <div class="container">
-        <h1 id="main-title">Mes Compétences</h1>
+        <h1>Mes Compétences</h1>
 
-        <h2 id="services-title">Services Proposés</h2>
+        <h2>Services Proposés</h2>
         <ul>
-            <li id="service1">Installation de caméras de surveillance</li>
-            <li id="service2">OSINT (Open Source Intelligence)</li>
-            <li id="service3">Création de bots Discord et hébergement</li>
-            <li id="service4">Création de sites web (hors plateformes e-commerce ou applications web) et hébergement</li>
-            <li id="service5">Montage vidéo</li>
+            <li>Installation de caméras de surveillance</li>
+            <li>OSINT (Open Source Intelligence)</li>
+            <li>Création de bots Discord et hébergement</li>
+            <li>Création de sites web (hors plateformes e-commerce ou applications web) et hébergement</li>
+            <li>Montage vidéo</li>
         </ul>
 
         <h2>Projets</h2>
-        <p id="projects-description">Pour voir mes compétences en action, n'hésitez pas à consulter mes projets :</p>
+        <p>Pour voir mes compétences en action, n'hésitez pas à consulter mes projets :</p>
         <ul class="projets">
             <li><a href="perso.html">Projets Personnels</a></li>
             <li><a href="ecole.html">Projets de l'École</a></li>
         </ul>
 
         <h2>Contact</h2>
-        <p>Pour toute question ou demande, veuillez me <a href="contact.html">contacter</a>.</p>
-
-        <!-- Bouton pour changer la langue -->
-        <button class="language-button" id="toggle-translate" onclick="toggleTranslation()">English</button>
+        <p>Pour toute question ou demande :</p>
+        <!-- Bouton pour contacter -->
+        <a href="contact.html" class="button-contact">Contactez-moi</a>
     </div>
 
     <footer>
         <p>&copy; 2024 Raphaël ATTIAS. Tous droits réservés.</p>
     </footer>
 
-    <!-- Script JS pour le menu hamburger et la traduction -->
+    <!-- Script JS pour le menu hamburger -->
     <script>
-        let isEnglish = false;
-
-        function toggleTranslation() {
-            const title = document.getElementById('main-title');
-            const servicesTitle = document.getElementById('services-title');
-            const projectsDescription = document.getElementById('projects-description');
-            const service1 = document.getElementById('service1');
-            const service2 = document.getElementById('service2');
-            const service3 = document.getElementById('service3');
-            const service4 = document.getElementById('service4');
-            const service5 = document.getElementById('service5');
-            const button = document.getElementById('toggle-translate');
-
-            if (isEnglish) {
-                // Traduction en français
-                title.textContent = "Mes Compétences";
-                servicesTitle.textContent = "Services Proposés";
-                projectsDescription.textContent = "Pour voir mes compétences en action, n'hésitez pas à consulter mes projets :";
-                service1.textContent = "Installation de caméras de surveillance";
-                service2.textContent = "OSINT (Open Source Intelligence)";
-                service3.textContent = "Création de bots Discord et hébergement";
-                service4.textContent = "Création de sites web (hors plateformes e-commerce ou applications web) et hébergement";
-                service5.textContent = "Montage vidéo";
-                button.textContent = "English";
-            } else {
-                // Traduction en anglais
-                title.textContent = "My Skills";
-                servicesTitle.textContent = "Services Offered";
-                projectsDescription.textContent = "To see my skills in action, feel free to check out my projects:";
-                service1.textContent = "Installation of surveillance cameras";
-                service2.textContent = "OSINT (Open Source Intelligence)";
-                service3.textContent = "Creation of Discord bots and hosting";
-                service4.textContent = "Creation of websites (excluding e-commerce platforms or web applications) and hosting";
-                service5.textContent = "Video editing";
-                button.textContent = "Français";
-            }
-
-            isEnglish = !isEnglish;
-        }
-
         function toggleNav() {
             const navItems = document.querySelector('.nav-items');
             navItems.classList.toggle('open');

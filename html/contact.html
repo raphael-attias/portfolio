@@ -111,21 +111,6 @@
             transition: transform 0.3s, background 0.3s;
         }
 
-        /* Nav cachée par défaut */
-        .nav-items {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* Nav ouverte sur mobile avec deux colonnes */
-        .nav-items.open {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-            gap: 10px; /* Espace entre les colonnes */
-            width: 100%;
-            justify-content: center;
-        }
-
         /* Style pour les boutons avec bordure */
         .button {
             display: flex;
@@ -135,7 +120,7 @@
             color: var(--text-color-dark);
             font-weight: bold;
             padding: 10px 20px;
-            border: 2px solid var(--button-border-color); /* Bordure du bouton */
+            border: 2px solid var(--button-border-color);
             border-radius: 5px;
             width: 100%;
             margin: 15px 0;
@@ -151,6 +136,7 @@
 
         .icon {
             margin-right: 8px;
+            display: inline-block;
         }
 
         /* Footer */
@@ -210,13 +196,13 @@
             }
 
             .nav-item {
-                padding: 8px 10px; /* Réduction du padding sur mobile */
-                font-size: 0.9rem; /* Taille de police plus petite */
+                padding: 8px 10px;
+                font-size: 0.9rem;
                 text-align: center;
             }
 
             .nav-toggle {
-                display: flex; /* Affiche le menu hamburger */
+                display: flex;
             }
 
             .nav-items {
@@ -225,7 +211,7 @@
 
             .nav-items.open {
                 display: grid;
-                grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+                grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
                 width: 100%;
             }
@@ -245,7 +231,7 @@
             }
 
             .button {
-                width: 80%; /* Encore plus fin sur les très petits écrans */
+                width: 80%;
                 padding: 8px 0;
             }
         }
@@ -277,13 +263,15 @@
         <h1>Contact</h1>
         <h2>Me Contacter</h2>
         
+        <!-- Email button -->
         <a href="mailto:rapatt@littlestorm.eu" class="button">
-            <img src="/images/logos/mail.png" alt="Email Icon" class="icon" width="24" height="24">
+            <img src="../image/mail.png" alt="Email Icon" class="icon" width="24" height="24">
             Envoyer un email --> rapatt@littlestorm.eu
         </a>
 
+        <!-- LinkedIn button -->
         <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="button">
-            <img src="/images/logos/linkedin.png" alt="LinkedIn Icon" class="icon" width="24" height="24">
+            <img src="../image/lk.png" alt="LinkedIn Icon" class="icon" width="24" height="24">
             Suivre sur LinkedIn
         </a>
     </div>
@@ -291,14 +279,13 @@
     <!-- Footer -->
     <footer>
         <div class="footer-container">
-            <p>Ce site est la propriété intellectuelle de Rapatt. Tous les projets, contenus et créations sont protégés par les droits de la propriété intellectuelle.</p>
-            <p><a href="https://raphael.littlestorm.eu" target="_blank" rel="noopener noreferrer" class="footer-link">Created by Rapatt</a></p>
+            <p><a href="https://raphael.littlestorm.eu" target="_blank" rel="noopener noreferrer" class="footer-link">--> Created by Rapatt  <-- </a></p>
             <div class="social-links">
                 <a href="https://linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer">
-                    <img src="/images/logos/linkedin.png" alt="LinkedIn" class="social-icon" width="24" height="24">
+                    <img src="../image/lk.png" alt="LinkedIn" class="social-icon" width="24" height="24">
                 </a>
                 <a href="https://github.com/your-github-profile" target="_blank" rel="noopener noreferrer">
-                    <img src="/images/logos/github.png" alt="GitHub" class="social-icon" width="24" height="24">
+                    <img src="../image/github.png" alt="GitHub" class="social-icon" width="24" height="24">
                 </a>
             </div>
         </div>

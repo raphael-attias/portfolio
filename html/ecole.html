@@ -3,220 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/ecole.css">
     <title>Mon Cursus et Projets Scolaires</title>
-    <style>
-        /* Variables CSS */
-        :root {
-            --main-bg-color: #1e1e1e;
-            --container-bg-color: #2a2a2a;
-            --accent-color: #00ff00;
-            --text-color-light: #f0f0f0;
-            --text-color-dark: #2a2a2a;
-            --button-border-color: #00ff00; /* Couleur du contour des boutons */
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #1e1e1e; /* Couleur sombre pour le fond */
-            color: #f0f0f0; /* Couleur claire pour le texte */
-            padding: 10px;
-        }
-
-        /* Barre de navigation */
-        .navbar {
-            background-color: var(--container-bg-color);
-            padding: 10px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .navbar-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Liens de navigation */
-        .nav-items {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .nav-item {
-            color: var(--accent-color);
-            font-weight: bold;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .nav-item:hover {
-            background-color: var(--accent-color);
-            color: var(--text-color-dark);
-        }
-
-        /* Menu hamburger (mobile) */
-        .nav-toggle {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 30px;
-            height: 30px;
-        }
-
-        .nav-toggle span {
-            display: block;
-            width: 100%;
-            height: 3px;
-            background: var(--accent-color);
-            margin: 4px 0;
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        /* Nav cachée par défaut */
-        .nav-items {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* Nav ouverte sur mobile avec deux colonnes */
-        .nav-items.open {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-            gap: 10px;
-            width: 100%;
-            justify-content: center;
-        }
-        /* Footer */
-        footer {
-            background-color: var(--container-bg-color);
-            color: var(--text-color-light);
-            padding: 20px;
-            text-align: center;
-            font-size: 0.9em;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .footer-container p {
-            margin: 5px 0;
-            line-height: 1.4;
-        }
-
-        .footer-link {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .footer-link:hover {
-            color: #00cc00;
-        }
-
-        .social-links {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-icon {
-            transition: transform 0.3s;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.2);
-        }
-
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .navbar-container {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-
-            .nav-item {
-                padding: 8px 10px; /* Réduction du padding sur mobile */
-                font-size: 0.9rem; /* Taille de police plus petite */
-                text-align: center;
-            }
-
-            .nav-toggle {
-                display: flex; /* Affiche le menu hamburger */
-            }
-
-            .nav-items {
-                display: none;
-            }
-
-            .nav-items.open {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-                gap: 10px;
-                width: 100%;
-            }
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #2a2a2a; /* Fond légèrement plus clair pour le conteneur */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
-        }
-
-        h1, h2, h3 {
-            color: #00ff00; /* Vert fluo pour les titres */
-        }
-
-        .unit {
-            background: #3c3c3c; /* Fond sombre pour chaque unité */
-            border-left: 5px solid #00ff00; /* Bordure verte */
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 5px;
-        }
-
-        .unit-title {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            color: #00ff00; /* Couleur du titre de l'unité */
-        }
-
-        ul {
-            list-style: disc;
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-            color: #f0f0f0; /* Couleur des éléments de liste */
-        }
-
-        p {
-            margin-bottom: 15px;
-            color: #f0f0f0; /* Couleur des paragraphes */
-        }
-    </style>
 </head>
 <body>
     <!-- Barre de navigation -->
@@ -310,21 +98,19 @@
         </div>
     </div>
     <!-- Footer -->
-<footer>
-    <div class="footer-container">
-        <p><a href="https://raphael.littlestorm.eu" target="_blank" rel="noopener noreferrer" class="footer-link">--> Created by Rapatt  <-- </a></p>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer">
-                <img src="../image/lk.png" alt="LinkedIn" class="social-icon" width="24" height="24">
-            </a>
-            <a href="https://github.com/your-github-profile" target="_blank" rel="noopener noreferrer">
-                <img src="../image/github.png" alt="GitHub" class="social-icon" width="24" height="24">
-            </a>
+    <footer class="footer">
+        <div class="footer-container">
+            <p><a href="https://raphael.littlestorm.eu" target="_blank" rel="noopener noreferrer" class="footer-link">--> Created by Rapatt  <--</a></p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/raphael-attias-b3090b298/" target="_blank" rel="noopener noreferrer">
+                    <img src="../image/lk.png" alt="LinkedIn" class="social-icon" width="24" height="24">
+                </a>
+                <a href="https://github.com/raphael-attias" target="_blank" rel="noopener noreferrer">
+                    <img src="../image/github.png" alt="GitHub" class="social-icon" width="24" height="24">
+                </a>
+            </div>
         </div>
-    </div>
-</footer>
-
-
+    </footer>
     <!-- Script JS pour le menu hamburger -->
     <script>
         function toggleNav() {
